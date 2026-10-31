@@ -10,7 +10,12 @@ class StoreButtonPressRequest extends BaseRequest
     {
         return [
             // 1 بحبك | 2 وحشتيني | 3 طمني عليك | 4 طوارئ | 5 تصبح على خير
-            'button' => ['required', 'integer', 'in:1,2,3,4,5'],
+            'button' => [
+                'required',
+                'integer',
+                'in:1,2,3,4,5',
+                '6'
+            ],
         ];
     }
 }
