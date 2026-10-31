@@ -41,6 +41,8 @@ class VoiceMessageController extends Controller
             '-y',
             '-i',
             $request->file('voice')->getRealPath(),
+            '-af',
+            'rubberband=pitch=1.35:formant=shifted,lowpass=f=7000,volume=1.4',
             '-ac',
             '1',
             '-ar',
