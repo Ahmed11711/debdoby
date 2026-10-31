@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
 class DeviceVoiceController extends Controller
 {
     /** الـ disk اللي بتتخزن عليه الملفات (لازم يطابق اللي بيرفع الرسالة) */
-    private const DISK = 'local';
+    private const DISK = 'public';
 
     /**
      * الدبدوب بينادي هنا بعد ما يجيله الرقم 6.
@@ -77,7 +77,7 @@ class DeviceVoiceController extends Controller
         }
 
         return $disk->response($message->path, null, [
-            'Content-Type'       => 'audio/wav',
+            'Content-Type' => 'audio/mpeg',
             'Content-Length'     => (string) $disk->size($message->path),
             'Cache-Control'      => 'no-store',
             'X-Message-Id'       => (string) $message->id,
