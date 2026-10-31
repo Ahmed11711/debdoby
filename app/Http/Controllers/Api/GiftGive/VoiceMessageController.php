@@ -37,7 +37,7 @@ class VoiceMessageController extends Controller
         File::ensureDirectoryExists(dirname($out));
 
         $process = new Process([
-            'ffmpeg',
+            '/home/u665532565/bin/ffmpeg',
             '-y',
             '-i',
             $request->file('voice')->getRealPath(),
