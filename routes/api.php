@@ -2,11 +2,13 @@
 
 use App\Http\Controllers\Api\Auth\AuthController;
 use App\Http\Controllers\Api\Device\DeviceController;
+use App\Http\Controllers\Api\Device\DeviceVoiceController;
 use App\Http\Controllers\Api\Device\RecipientController;
 use App\Http\Controllers\Api\GiftGive\ButtonPressController;
 use App\Http\Controllers\Api\GiftGive\GiftGiverController;
 use App\Http\Controllers\Api\GiftGive\VoiceMessageController;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -38,3 +40,5 @@ Route::middleware('auth:api')->group(function () {
     Route::delete('device-name', [DeviceController::class, 'destroy']);
     Route::post('recipient-name', [RecipientController::class, 'store']);
 });
+
+Route::get('device-latest', [DeviceVoiceController::class, 'latest']);
